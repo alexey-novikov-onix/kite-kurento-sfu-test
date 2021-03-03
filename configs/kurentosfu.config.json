@@ -1,0 +1,29 @@
+{
+  "name": "KurentoSfu %ts",
+  "grids": [
+    {
+      "type": "local",
+      "url": "http://localhost:4444/wd/hub"
+    }
+  ],
+  "tests": [
+    {
+      "name": "KurentoSfu Test %ts",
+      "tupleSize": 5,
+      "description": "KurentoSfu test description",
+      "testImpl": "org.onix.kurentosfu.test.KiteKurentoSfuTest",
+      "payload" : {
+        "url": "http://localhost:8080",
+        "videoDurationInSeconds": 5,
+        "waitAroundInMilliseconds": 500
+      }
+    }
+  ],
+  "clients": [
+    {
+      "browserName": "chrome",
+      "platform": "localhost",
+      "headless": false
+    }
+  ]
+}
