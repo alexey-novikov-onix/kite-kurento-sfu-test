@@ -1,6 +1,6 @@
 package org.onix.kurentosfu.test;
 
-import org.onix.kurentosfu.test.checks.VideoCheck;
+import org.onix.kurentosfu.test.checks.VideosCheck;
 import org.onix.kurentosfu.test.steps.OpenUrlStep;
 import org.webrtc.kite.tests.KiteBaseTest;
 import org.webrtc.kite.tests.TestRunner;
@@ -23,7 +23,12 @@ public class KiteKurentoSfuTest extends KiteBaseTest {
     @Override
     public void populateTestSteps(final TestRunner runner) {
         runner.addStep(new OpenUrlStep(runner, this.url));
-        runner.addStep(new VideoCheck(runner, this.videoDurationInSeconds, this.waitAroundInMilliseconds));
+        runner.addStep(new VideosCheck(
+                runner,
+                this.videoDurationInSeconds,
+                this.waitAroundInMilliseconds,
+                this.tupleSize
+        ));
     }
 
 }

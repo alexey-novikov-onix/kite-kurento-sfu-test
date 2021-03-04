@@ -9,12 +9,13 @@
   "tests": [
     {
       "name": "KurentoSfu Test %ts",
-      "tupleSize": 5,
+      "tupleSize": 2,
+      "noOfThreads": 1,
       "description": "KurentoSfu test description",
       "testImpl": "org.onix.kurentosfu.test.KiteKurentoSfuTest",
-      "payload" : {
+      "payload": {
         "url": "http://localhost:8080",
-        "videoDurationInSeconds": 5,
+        "videoDurationInSeconds": 10,
         "waitAroundInMilliseconds": 500
       }
     }
