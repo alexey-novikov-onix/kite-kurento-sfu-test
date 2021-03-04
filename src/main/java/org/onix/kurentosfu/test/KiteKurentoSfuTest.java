@@ -8,13 +8,11 @@ import org.webrtc.kite.tests.TestRunner;
 public class KiteKurentoSfuTest extends KiteBaseTest {
 
     private String url;
-    private int videoDurationInSeconds;
     private int waitAroundInMilliseconds;
 
     @Override
     protected void payloadHandling() {
         this.url = this.payload.getString("url");
-        this.videoDurationInSeconds = this.payload.getInt("videoDurationInSeconds");
         this.waitAroundInMilliseconds = this.payload.getInt("waitAroundInMilliseconds");
 
         logger.info("Payload handling " + this.payload);
@@ -25,7 +23,6 @@ public class KiteKurentoSfuTest extends KiteBaseTest {
         runner.addStep(new OpenUrlStep(runner, this.url));
         runner.addStep(new VideosCheck(
                 runner,
-                this.videoDurationInSeconds,
                 this.waitAroundInMilliseconds,
                 this.tupleSize
         ));

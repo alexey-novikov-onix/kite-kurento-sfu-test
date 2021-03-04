@@ -7,24 +7,20 @@ import io.cosmosoftware.kite.report.Status;
 import io.cosmosoftware.kite.steps.TestCheck;
 import io.cosmosoftware.kite.util.TestUtils;
 import org.onix.kurentosfu.test.pages.MainPage;
-import org.openqa.selenium.JavascriptExecutor;
 
 public class VideosCheck extends TestCheck {
 
     private final MainPage mainPage;
-    private final int videoDurationInSeconds;
     private final int waitAroundInMilliseconds;
     private final int tupleSize;
 
     public VideosCheck(
             final Runner runner,
-            final int videoDurationInSeconds,
             final int waitAroundInMilliseconds,
             final int tupleSize
     ) {
         super(runner);
         this.mainPage = new MainPage(runner);
-        this.videoDurationInSeconds = videoDurationInSeconds;
         this.waitAroundInMilliseconds = waitAroundInMilliseconds;
         this.tupleSize = tupleSize;
     }
@@ -36,7 +32,7 @@ public class VideosCheck extends TestCheck {
 
     @Override
     protected void step() throws KiteTestException {
-        TestUtils.waitAround(this.tupleSize * 3 * 1000);
+        TestUtils.waitAround(this.tupleSize * this.waitAroundInMilliseconds);
 
         this.logger.info("Looking for video objects");
 

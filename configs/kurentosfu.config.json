@@ -15,8 +15,7 @@
       "testImpl": "org.onix.kurentosfu.test.KiteKurentoSfuTest",
       "payload": {
         "url": "http://localhost:8080",
-        "videoDurationInSeconds": 10,
-        "waitAroundInMilliseconds": 500
+        "waitAroundInMilliseconds": 3000
       }
     }
   ],
